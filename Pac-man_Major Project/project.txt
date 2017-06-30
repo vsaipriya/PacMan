@@ -1,0 +1,41 @@
+Project 1: Search in Pacman
+/////////////////////////////////////////////////////////////////
+python pacman.py -l bigMaze -p SearchAgent -a fn=dfs -z .5
+$ python pacman.py -l bigMaze -p SearchAgent -a fn=bfs -z .5
+
+$ python pacman.py -l openMaze -p SearchAgent -a fn=dfs -z .5
+$ python pacman.py -l openMaze -p SearchAgent -a fn=bfs -z .5
+
+$ python pacman.py -l mediumMaze -p SearchAgent -a fn=ucs
+$ python pacman.py -l mediumDottedMaze -p StayEastSearchAgent
+$ python pacman.py -l mediumScaryMaze -p StayWestSearchAgent
+
+$ python pacman.py -l trickySearch -p SearchAgent -a fn=bfs,prob=FoodSearchProblem
+$ python pacman.py -l trickySearch -p SearchAgent -a fn=astar,prob=FoodSearchProblem,heuristic=foodHeuristic
+
+////////////////////////////////////////////////////////////////
+
+Project 2: Multi Agent Search
+////////////////////////////////////////////////////////////////
+To see how the ExpectimaxAgent behaves in Pacman, run:
+
+python pacman.py -p ExpectimaxAgent -l minimaxClassic -a depth=3
+
+You should now observe a more cavalier approach in close quarters with ghosts. In particular, if Pacman perceives that he could be trapped but might escape to grab a few more pieces of food, he'll at least try. Investigate the results of these two scenarios:
+
+python pacman.py -p AlphaBetaAgent -l trappedClassic -a depth=3 -q -n 10
+python pacman.py -p ExpectimaxAgent -l trappedClassic -a depth=3 -q -n 10
+
+
+Project 3: Reinforcement Learning
+///////////////////////////////////////////////////////////////
+python gridworld.py -a q -k 100 
+$ python pacman.py -p ApproximateQAgent -a extractor=SimpleExtractor -x 50 -n 60 -l mediumGrid
+$ python pacman.py -p ApproximateQAgent -a extractor=SimpleExtractor -x 50 -n 60 -l mediumClassic
+///////////////////////////////////////////////////////////////
+
+Project 4: Ghostbusters
+//////////////////////////////////////////////////////////////
+$ python busters.py
+$ python busters.py -p GreedyBustersAgent -l bigHunt
+//////////////////////////////////////////////////////////////
